@@ -9,7 +9,7 @@ Use the  **"-wCompiler VLiance/WebRT"** command-line to automatically download/u
 
 ## Raymarching with GZE
 
-[![Screen Shot](demo/Raymarching/Raymarching.png)](http://htmlpreview.github.io/?https://github.com/VLianceTool/WebRT/blob/master/demo/Raymarching/App.html)
+[![Screen Shot](demo/Raymarching/Raymarching.png)](https://vliancetool.github.io/WebRT/demo/Raymarching/App.html)
 
 ## Particularity
 
