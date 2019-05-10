@@ -13,7 +13,7 @@ Use the  **"-{wToolchain}= VLianceTool/WebRT"** command-line to automatically do
 
 ## Particularity
 
-Cwc load arguments xml file in the 'cwc' forlder: [Default.cwfg](https://github.com/VLianceTool/WebRT/blob/master/cwc/WebRT.Default.cwcfg) (by default)
+Cwc load arguments in a "xml like" file: [Default.cwfg](https://github.com/VLianceTool/WebRT/blob/master/cwc/WebRT.Default.cwcfg) (by default)
 
 ### *"Preload"* node:
 All config is generated without modifing your [environment variable](https://www.computerhope.com/issues/ch000549.htm), this will perform compilation in a more portable way
