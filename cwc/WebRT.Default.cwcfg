@@ -2,7 +2,7 @@
 
 <Config>
 	<Platform name="Web_Emsc" default="true"></Platform>
-	
+
 	<Type name="C">   <Extention>c</Extention>              </Type>
 	<Type name="C++"> <Extention>c++,cc,cpp,cxx</Extention> </Type>
 
@@ -11,49 +11,49 @@
 <Exe>
 	<Preload>cwc/CreateConfig.exe</Preload>
 	<ViewIn>cwc/GetBrowsers.exe</ViewIn>
-	
-     <Compiler>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Compiler>
-	 <Linker>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Linker>
-     <Linker_Static>{vWebRT_Python}python.exe "{vWebRT_Emsc}emar" --em-config "{vWebRT_Config}"</Linker_Static>
-     <Linker_Dynamic>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Linker_Dynamic>
-	
-    <Resource></Resource>
+
+	<Compiler>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Compiler>
+	<Linker>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Linker>
+	<Linker_Static>{vWebRT_Python}python.exe "{vWebRT_Emsc}emar" --em-config "{vWebRT_Config}"</Linker_Static>
+	<Linker_Dynamic>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Linker_Dynamic>
+
+	<Resource></Resource>
 </Exe>
 <Arguments>
 
-	 <Compiler>-I"{vWebRT_Emsc}system/include/" </Compiler>
+	<Compiler>-I"{vWebRT_Emsc}system/include/" </Compiler>
 
-	 <Compiler>-DGZ_D_Monothread</Compiler>
-	 
-	  <CompilerLinker>--shell-file "{vWebRT_Shell}"</CompilerLinker> 
-	  
-	  <Finally_CopyFolder>{vWebRT_Shell} -> {_pProject}{_pOutput_Bin} !> *.s_html</Finally_CopyFolder> 
-	  
-     <CompilerLinker>--emrun </CompilerLinker>
-	 <CompilerLinker>--bind </CompilerLinker>
+	<Compiler>-DGZ_D_Monothread</Compiler>
 
-	 
-	 <CompilerLinker>-m32 </CompilerLinker>
-	 <CompilerLinker>-fcolor-diagnostics -fansi-escape-codes </CompilerLinker>
-	 <CompilerLinker>-std=c++14 </CompilerLinker>
-	  
-	 <Compiler>-MD </Compiler>
-	 <Compiler>-I"{_pProject}" </Compiler>
+	<CompilerLinker>--shell-file "{vWebRT_Shell}"</CompilerLinker> 
+
+	<Finally_CopyFolder>{vWebRT_Shell} -> {_pProject}{_pOutput_Bin} !> *.s_html</Finally_CopyFolder> 
+
+	<CompilerLinker>--emrun </CompilerLinker>
+	<CompilerLinker>--bind </CompilerLinker>
+
+
+	<CompilerLinker>-m32 </CompilerLinker>
+	<CompilerLinker>-fcolor-diagnostics -fansi-escape-codes </CompilerLinker>
+	<!-- <CompilerLinker>-std=c++14 </CompilerLinker> -->
+
+	<Compiler>-MD </Compiler>
+	<Compiler>-I"{_pProject}" </Compiler>
 
 	<Linker>-Qunused-arguments -Wno-unused-value -Wno-deprecated-register -Wno-ignored-attributes -Qunused-arguments -Wno-ignored-pragmas </Linker>	
 
 	<Linker>-Werror=return-type </Linker>
-	
 
-    <Linker>-static-libgcc -static-libstdc++ </Linker>
-   <Linker_Static>-r </Linker_Static> <!-- TODO Remove '-o' -->
-   <Linker_Dynamic> </Linker_Dynamic>
+
+	<Linker>-static-libgcc -static-libstdc++ </Linker>
+	<Linker_Static oFlag="false">-r </Linker_Static> <!-- oFlag=false to Remove '-o' -->
+	<Linker_Dynamic> </Linker_Dynamic>
 
 	<Debug>-g</Debug>
 	<O2>-O2</O2>
 	<O3>-O3</O3>
 	<OS>-Os</OS>
-   
+
 </Arguments>
 
 </Toolchain> <!-- End -->
