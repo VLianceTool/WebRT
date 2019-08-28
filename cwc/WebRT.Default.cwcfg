@@ -5,7 +5,7 @@
 	
 	<Type name="C">   <Extention>c</Extention>              </Type>
 	<Type name="C++"> <Extention>c++,cc,cpp,cxx</Extention> </Type>
-
+	 <BinExt>html</BinExt>
 </Config>
 
 <Exe>
@@ -45,13 +45,16 @@
 	<Linker>-Qunused-arguments -Wno-unused-value -Wno-deprecated-register -Wno-ignored-attributes -Qunused-arguments -Wno-ignored-pragmas </Linker>	
 
 	<Linker>-Werror=return-type </Linker>
-	
+	<Linker> -s DEMANGLE_SUPPORT=1</Linker> <!-- Debug Only? -->
+
+	<!-- -s WASM=0 //Build in js instead of wasm-->
+
 
     <Linker>-static-libgcc -static-libstdc++ </Linker>
    <Linker_Static>-r </Linker_Static> <!-- TODO Remove '-o' -->
    <Linker_Dynamic> </Linker_Dynamic>
 
-	<Debug>-g</Debug>
+	<Debug>-g</Debug> <!---s ASSERTIONS=1?? // Linker -->
 	<O2>-O2</O2>
 	<O3>-O3</O3>
 	<OS>-Os</OS>
