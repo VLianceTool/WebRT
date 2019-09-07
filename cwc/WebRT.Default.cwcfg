@@ -25,7 +25,7 @@
 
 	 <Compiler>-I"{vWebRT_Emsc}system/include/" </Compiler>
 
-	 <Compiler>-DGZ_D_Monothread</Compiler>
+	 <Compiler>-DGZ_D_Monothread -DGZ_D_CpuRenderer_Reverse_BlueAndRed</Compiler>
 	 
 	  <CompilerLinker>--shell-file "{vWebRT_Shell}"</CompilerLinker> 
 	  

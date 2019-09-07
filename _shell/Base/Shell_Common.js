@@ -555,10 +555,23 @@ var Sandbox = {
 
 	  
 	  
-	 /////////////////////////// /////////////////////////// /////////////////////////// 
+	  
+	class GZE_Context {
+		bInitialised = false;
+		constructor() {
+		}
+
+		Initialised() {
+			this.bInitialised = true;
+			//console.log("JS: GZE Initialised");
+		}
+	}
+	  
+	/////////////////////////// /////////////////////////// /////////////////////////// 
    /////////////////////////// FPS METER ///////////////////////////////////
 
-	function Shell_FpsMeterStart() {
+	function Shell_OnLoad() {
+			window.GZE = new GZE_Context();
 			window.meter = new FPSMeter( document.getElementById('FpsDiv'), {
 				interval:  100,     // Update interval in milliseconds.
 				smoothing: 10,      // Spike smoothing strength. 1 means no smoothing.
