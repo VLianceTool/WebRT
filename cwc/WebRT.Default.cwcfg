@@ -44,8 +44,12 @@
 
 	<Linker>-Qunused-arguments -Wno-unused-value -Wno-deprecated-register -Wno-ignored-attributes -Qunused-arguments -Wno-ignored-pragmas </Linker>	
 
+	
+		<CompilerLinker> -s DISABLE_DEPRECATED_FIND_EVENT_TARGET_BEHAVIOR=1 </CompilerLinker>
 	<Linker>-Werror=return-type </Linker>
-	<Linker> -s DEMANGLE_SUPPORT=1</Linker> <!-- Debug Only? -->
+	<Linker> -s DEMANGLE_SUPPORT=1 </Linker> <!-- Debug Only? -->
+	<Linker> -s ALLOW_MEMORY_GROWTH=1 </Linker> <!-- Wasm Only? -->
+
 
 	<!-- -s WASM=0 //Build in js instead of wasm-->
 
