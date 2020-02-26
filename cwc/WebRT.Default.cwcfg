@@ -56,6 +56,10 @@
 	<Linker>-s WASM=0 </Linker>
 	<!-- //No .mem file-->
 	<Linker>--memory-init-file 0</Linker>
+	
+		<!-- //Temp-->
+	<!--  <Linker>-s MAIN_MODULE=1</Linker>-->
+
 
 
     <Linker>-static-libgcc -static-libstdc++ </Linker>
