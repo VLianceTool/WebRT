@@ -81,7 +81,7 @@ html {
 
       .emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
       div.emscripten { text-align: center; width:100% }      
-      div.emscripten_border { margin-top: 0px; background-color: #F0F1F3;  border: 1px solid #333333; box-shadow: 0px 0px 5px #BBBBBB; display:inline-block;}
+      div.emscripten_border { margin-top: 0px;  border: 1px solid #333333; box-shadow: 0px 0px 5px #BBBBBB; display:inline-block;}
       /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
       canvas.emscripten { border: 0px none;   transition: all 1s ease-in-out;}
 
