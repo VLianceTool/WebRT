@@ -1,0 +1,32 @@
+https://github.com/emscripten-core/emsdk
+Clone https://github.com/emscripten-core/emsdk.git 
+Install Python
+https://emscripten.org/docs/tools_reference/emsdk.html#emsdk
+emsdk uninstall (If already have an SDK) / emsdk update?
+
+//Check version
+emsdk list
+//Check for last version, not fastcomp?
+emsdk install X.XX.X
+//emsdk install latest ?
+
+//Get/Replace:
+_shell/
+cwc/
+demo/
+.gitignore
+README.md
+//Take emrun (/upstream/emscripten/emrun.py) from previous version --> Buggy [net::ERR_CONNECTION_REFUSED]
+
+7z:
+upstream/lib  ->.7z.-ex
+upstream/emscripten  ->.7z.-ex 
+upstream/fastcomp->.7z.-ex
+upstream/bin  ->.7z.-ex (dic size 256mb)
+
+python/ -> .7z.-ex
+node/ ->.7z.-ex
+java/ -> .7z.-ex
+
+version in (upstream/emscripten/ChangeLog.md):
+v1.39.7
