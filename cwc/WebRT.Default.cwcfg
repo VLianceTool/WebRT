@@ -50,7 +50,7 @@
 	<Linker> -s DEMANGLE_SUPPORT=1 </Linker> <!-- Debug Only? -->
 	<!--<Linker> -s ALLOW_MEMORY_GROWTH=1 </Linker>  // Wasm Only?  - memory growth is not supported with shared asm.js modules -->
 	<!--<Linker>-s TOTAL_MEMORY=16MB</Linker> -->
-	<Linker>--memory-init-file=0 </Linker>  <!-- no .mem file--> 
+	<Linker>--memory-init-file 0 </Linker>  <!-- no .mem file--> 
 	<Linker> -s WASM=0 </Linker> <!-- //Build in js instead of wasm -->
 
 
