@@ -47,7 +47,6 @@
 	
 		<CompilerLinker> -s DISABLE_DEPRECATED_FIND_EVENT_TARGET_BEHAVIOR=1 </CompilerLinker>
 	<Linker>-Werror=return-type </Linker>
-	<Linker> -s DEMANGLE_SUPPORT=1 </Linker> <!-- Debug Only? -->
 	<!--<Linker> -s ALLOW_MEMORY_GROWTH=1 </Linker>  // Wasm Only?  - memory growth is not supported with shared asm.js modules -->
 	<!--<Linker>-s TOTAL_MEMORY=16MB</Linker> -->
 	<Linker>--memory-init-file 0 </Linker>  <!-- no .mem file--> 
@@ -58,11 +57,12 @@
    <Linker_Static>-r </Linker_Static> <!-- TODO Remove '-o' -->
    <Linker_Dynamic> </Linker_Dynamic>
 
-	<Debug>-g</Debug> <!---s ASSERTIONS=1?? // Linker -->
+	<Debug>-g -s ASSERTIONS=2  -s DEMANGLE_SUPPORT=1 </Debug> <!---s ASSERTIONS=1?? // Linker -->
 	<O2>-O2</O2>
 	<O3>-O3</O3>
 	<OS>-Os</OS>
-   
+   	<OZ>-Oz</OZ>
+	
 </Arguments>
 
 </Toolchain> <!-- End -->
