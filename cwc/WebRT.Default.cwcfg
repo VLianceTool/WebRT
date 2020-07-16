@@ -57,7 +57,7 @@
    <Linker_Static>-r </Linker_Static> <!-- TODO Remove '-o' -->
    <Linker_Dynamic> </Linker_Dynamic>
 
-	<Debug>-g -s ASSERTIONS=2  -s DEMANGLE_SUPPORT=1 </Debug> <!---s ASSERTIONS=1?? // Linker -->
+	<Debug>-g4 -s ASSERTIONS=2  -s DEMANGLE_SUPPORT=1 </Debug> <!---s ASSERTIONS=1?? // Linker -->
 	<O2>-O2</O2>
 	<O3>-O3</O3>
 	<OS>-Os</OS>
