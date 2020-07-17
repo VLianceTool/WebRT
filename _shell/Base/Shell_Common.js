@@ -510,7 +510,7 @@ var Sandbox = {
           if (0) { // XXX disabled for safety typeof dump == 'function') {
             dump(text + '\n'); // fast, straight to the real console
           } else {
-            console.error(text);
+            console.log(text);
           }
         },
         canvas: (function() {

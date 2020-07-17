@@ -1,0 +1,74 @@
+﻿<Toolchain> <!-- WebRT Cwc Config -->
+
+<Config>
+	<Platform name="Web_Emsc" default="true"></Platform>
+	
+	<Type name="C">   <Extention>c</Extention>              </Type>
+	<Type name="C++"> <Extention>c++,cc,cpp,cxx</Extention> </Type>
+	 <BinExt>html</BinExt>
+</Config>
+
+<Exe>
+	<Preload>cwc/CreateConfig.exe</Preload>
+	<ViewIn>cwc/GetBrowsers.exe</ViewIn>
+	
+	 <Compiler type="C">{vWebRT_Python}python.exe "{vWebRT_Emsc}emcc" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Compiler>	
+			  <Compiler>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Compiler>
+	 
+	 <Linker>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Linker>
+     <Linker_Static>{vWebRT_Python}python.exe "{vWebRT_Emsc}emar" --em-config "{vWebRT_Config}"</Linker_Static>
+     <Linker_Dynamic>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Linker_Dynamic>
+	
+    <Resource></Resource>
+</Exe>
+<Arguments>
+
+	 <Compiler>-I"{vWebRT_Emsc}system/include/" </Compiler>
+
+	 <Compiler>-DGZ_D_Monothread -DGZ_D_CpuRenderer_Reverse_BlueAndRed</Compiler>
+	 
+	  <CompilerLinker>--shell-file "{_pModule}_shell/Minimal/shell_minimal_runtime.html"</CompilerLinker> 
+	  
+	  <Finally_CopyFolder>"{_pModule}_shell/Minimal/shell_minimal_runtime.html" -> {_pProject}{_pOutput_Bin} !> *.s_html</Finally_CopyFolder> 
+	  
+     <!--<CompilerLinker>-!emrun </CompilerLinker> //Not work with sidemodule -->
+	 <CompilerLinker>--bind </CompilerLinker>
+
+	 
+	 <CompilerLinker>-m32 </CompilerLinker>
+	 <CompilerLinker>-fcolor-diagnostics -fansi-escape-codes </CompilerLinker>
+	 <!--<CompilerLinker>-std=c++14 </CompilerLinker>-->
+	  
+	 <Compiler>-MD </Compiler>
+	 <Compiler>-I"{_pProject}" </Compiler>
+
+	<Linker>-Qunused-arguments -Wno-unused-value -Wno-deprecated-register -Wno-ignored-attributes -Qunused-arguments -Wno-ignored-pragmas </Linker>	
+
+	
+		<CompilerLinker> -s DISABLE_DEPRECATED_FIND_EVENT_TARGET_BEHAVIOR=1 </CompilerLinker>
+	<Linker>-Werror=return-type </Linker>
+	<!--<Linker> -s ALLOW_MEMORY_GROWTH=1 </Linker>  // Wasm Only?  - memory growth is not supported with shared asm.js modules -->
+	<!--<Linker>-s TOTAL_MEMORY=16MB</Linker> -->
+	
+	<Linker> -s MINIMAL_RUNTIME=1 </Linker> 
+		
+	<Linker>--memory-init-file 0 </Linker>  <!-- no .mem file--> 
+	<Linker> -s WASM=0 </Linker> <!-- //Build in js instead of wasm -->
+
+
+    <Linker>-static-libgcc -static-libstdc++ </Linker>
+   <Linker_Static>-r </Linker_Static> <!-- TODO Remove '-o' -->
+   <Linker_Dynamic> </Linker_Dynamic>
+
+	<Debug>-g4 -s ASSERTIONS=2  -s DEMANGLE_SUPPORT=1 </Debug> <!---s ASSERTIONS=1?? // Linker -->
+	<O2>-O2</O2>
+	<O3>-O3</O3>
+	<OS>-Os</OS>
+   	<OZ>-Oz</OZ>
+	
+</Arguments>
+
+</Toolchain> <!-- End -->
+
+
+
