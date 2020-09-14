@@ -27,6 +27,7 @@ zips
 crunch
 java
 mingw
+shader
 spidermonkey
 binaryen
 .emscripten
