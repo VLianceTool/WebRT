@@ -12,12 +12,12 @@
 	<Preload>cwc/CreateConfig.exe</Preload>
 	<ViewIn>cwc/GetBrowsers.exe</ViewIn>
 	
-	 <Compiler type="C">{vWebRT_Python}python.exe "{vWebRT_Emsc}emcc" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Compiler>	
-			  <Compiler>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Compiler>
+	 <Compiler type="C">{vWebRT_Python}python.exe "{vWebRT_Emsc}emcc.py" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Compiler>	
+			  <Compiler>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++.py" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Compiler>
 	 
-	 <Linker>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Linker>
-     <Linker_Static>{vWebRT_Python}python.exe "{vWebRT_Emsc}emar" --em-config "{vWebRT_Config}"</Linker_Static>
-     <Linker_Dynamic>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Linker_Dynamic>
+	 <Linker>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++.py" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Linker>
+     <Linker_Static>{vWebRT_Python}python.exe "{vWebRT_Emsc}emar.py" --em-config "{vWebRT_Config}"</Linker_Static>
+     <Linker_Dynamic>{vWebRT_Python}python.exe "{vWebRT_Emsc}em++.py" --em-config "{vWebRT_Config}" --cache "{_pModule}_cache/"</Linker_Dynamic>
 	
 	
 	<shdc>shader/sokol-shdc.exe</shdc>
