@@ -442,7 +442,7 @@ var Sandbox = {
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
    
-   		document.getElementById("gze_canvas").onclick = function(e) {
+   		document.getElementById("canvas").onclick = function(e) {
 		    document.getElementById("outputContainer").style.zIndex=0;
 		}
 		    
@@ -514,7 +514,7 @@ var Sandbox = {
           }
         },
         canvas: (function() {
-          var canvas = document.getElementById('gze_canvas');
+          var canvas = document.getElementById("canvas");
 
           // As a default initial behavior, pop up an alert when webgl context is lost. To make your
           // application robust, you may want to override this behavior before shipping!
