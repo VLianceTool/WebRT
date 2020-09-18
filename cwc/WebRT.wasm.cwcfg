@@ -62,10 +62,10 @@
    <Linker_Dynamic> </Linker_Dynamic>
 
 	<Debug>-g4 -s ASSERTIONS=2  -s DEMANGLE_SUPPORT=1 </Debug> <!---s ASSERTIONS=1?? // Linker -->
-	<O2>-O2</O2>
-	<O3>-O3</O3>
-	<OS>-Os</OS>
-   	<OZ>-Oz</OZ>
+	<O2>-O2 -DNDEBUG </O2>
+	<O3>-O3 -DNDEBUG </O3>
+	<OS>-Os -DNDEBUG </OS>
+   	<OZ>-Oz -DNDEBUG </OZ>
 	
 </Arguments>
 
