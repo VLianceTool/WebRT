@@ -2,13 +2,12 @@
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
-<title>5-5-1-normal-mapping</title>
-<link rel="icon" type="image/png" href="https://www.geertarien.com/learnopengl-examples-html5/favicon.png">
 <style type="text/css">
 body {
     margin: 0;
     background-color: black;
 }
+/*
 .game-title {
     pointer-events: none;
     position: absolute;
@@ -22,6 +21,7 @@ body {
     font-family: "Arial Black", Gadget, sans-serif;
     font-size: 30px;
 }
+*/
 .game-menu-item {
     pointer-events: auto;
     font-size: 18px;
@@ -54,12 +54,10 @@ body {
 </style>
 </head>
 <body style="background:black">
-<!-- Show app title:
   <div class="game-title"><script type="text/javascript">
 			document.title = (location.pathname.substring(location.pathname.lastIndexOf("/") + 1)).replace('.html','');
 			document.write(document.title);
   </script></div>
- -->
   <canvas class="game" id="canvas" oncontextmenu="event.preventDefault()" width="1920" height="947"></canvas>
   <script type="text/javascript">
     var Module = {
