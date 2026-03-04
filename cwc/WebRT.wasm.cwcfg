@@ -27,7 +27,7 @@
 </Exe>
 <Arguments>
 
-	 <Compiler>-I"{vWebRT_Emsc}system/include/" </Compiler>
+	 <Compiler>-I"{vWebRT_Emsc}cache\sysroot\include" </Compiler>
 
 	 <Compiler>-DGZ_D_Monothread -DGZ_D_CpuRenderer_Reverse_BlueAndRed</Compiler>
 	 
@@ -53,7 +53,6 @@
 	<Linker>-Werror=return-type </Linker>
 	<!--<Linker> -s ALLOW_MEMORY_GROWTH=1 </Linker>  // Wasm Only?  - memory growth is not supported with shared asm.js modules -->
 	<!--<Linker>-s TOTAL_MEMORY=16MB</Linker> -->
-	<Linker>--memory-init-file 1 </Linker>  <!-- .mem file--> 
 	<Linker> -s WASM=1 </Linker> <!-- //Build in js instead of wasm -->
 
 

@@ -27,7 +27,8 @@
 </Exe>
 <Arguments>
 
-	 <Compiler>-I"{vWebRT_Emsc}system/include/" </Compiler>
+	<!-- <Compiler>-I"{vWebRT_Emsc}system/include/" </Compiler> -->
+	 <Compiler>-I"{vWebRT_Emsc}cache\sysroot\include" </Compiler>
 
 	 <Compiler>-DGZ_D_Monothread -DGZ_D_CpuRenderer_Reverse_BlueAndRed</Compiler>
 	 
@@ -49,11 +50,13 @@
 	<Linker>-Qunused-arguments -Wno-unused-value -Wno-deprecated-register -Wno-ignored-attributes -Qunused-arguments -Wno-ignored-pragmas </Linker>	
 
 	
-		<CompilerLinker> -s DISABLE_DEPRECATED_FIND_EVENT_TARGET_BEHAVIOR=1 </CompilerLinker>
+	<!--	<CompilerLinker> -s DISABLE_DEPRECATED_FIND_EVENT_TARGET_BEHAVIOR=1 </CompilerLinker>-->
+		<CompilerLinker> -s DISABLE_DEPRECATED_FIND_EVENT_TARGET_BEHAVIOR=0 </CompilerLinker>
+      
+      
 	<Linker>-Werror=return-type </Linker>
 	<!--<Linker> -s ALLOW_MEMORY_GROWTH=1 </Linker>  // Wasm Only?  - memory growth is not supported with shared asm.js modules -->
 	<!--<Linker>-s TOTAL_MEMORY=16MB</Linker> -->
-	<Linker>--memory-init-file 0 </Linker>  <!-- no .mem file--> 
 	<Linker> -s WASM=0 </Linker> <!-- //Build in js instead of wasm -->
 
 
@@ -61,7 +64,7 @@
    <Linker_Static>-r </Linker_Static> <!-- TODO Remove '-o' -->
    <Linker_Dynamic> </Linker_Dynamic>
 
-	<Debug>-g4 -s ASSERTIONS=2  -s DEMANGLE_SUPPORT=1 </Debug> <!---s ASSERTIONS=1?? // Linker -->
+	<Debug>-g -s ASSERTIONS=2   </Debug> <!--  -gsource-map   -s ASSERTIONS=1?? -s DEMANGLE_SUPPORT=1 // Linker -->
 	<O2>-O2 -DNDEBUG </O2>
 	<O3>-O3 -DNDEBUG </O3>
 	<OS>-Os -DNDEBUG </OS>

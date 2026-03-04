@@ -10,6 +10,9 @@ emsdk list
 emsdk install X.XX.X
 //emsdk install latest ?
 
+//use
+emsdk install latest
+
 //Get/Replace:
 _shell/
 cwc/
