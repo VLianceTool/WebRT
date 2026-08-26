@@ -28,7 +28,9 @@
 <Arguments>
 
 	<!-- <Compiler>-I"{vWebRT_Emsc}system/include/" </Compiler> -->
-	 <Compiler>-I"{vWebRT_Emsc}cache\sysroot\include" </Compiler>
+	 <Compiler>-I"{_pModule}_cache/sysroot/include" </Compiler>
+    <Compiler>-I"{_pModule}_cache/ports/emdawnwebgpu/emdawnwebgpu_pkg/webgpu/include/" </Compiler>
+
 
 	 <Compiler>-DGZ_D_Monothread -DGZ_D_CpuRenderer_Reverse_BlueAndRed</Compiler>
 	 
